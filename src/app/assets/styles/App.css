@@ -1,0 +1,16 @@
+:root {
+  --background-black: #1a202c;
+  --color-text: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  background-color: var(--background-black);
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--color-text);
+}
