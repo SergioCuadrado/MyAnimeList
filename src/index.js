@@ -36,6 +36,16 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Global Variables
+app.use((req, res, next) => {
+  // Obteniendo el mensaje del 'success', para tenerlo en mis vistas.
+  app.locals.success = req.flash('success');
+  app.locals.message = req.flash('message');
+  // Almacenando la informacion del usuario en la session para poder utilizar esta variable para cualquier vista
+  app.locals.user = req.user;
+  next();
+});
+
 // Routes
 app.use('/api/anime', require('./routes/anime.routes'));
 app.use(require('./routes/authentication'));

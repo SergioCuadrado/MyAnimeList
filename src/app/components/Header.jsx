@@ -22,6 +22,11 @@ const Header = () => {
             </Link>
           </li>
           <li>
+            <Link to="/logout" className="header__list">
+              Logout
+            </Link>
+          </li>
+          <li>
             <Link to="/api/anime" className="header__list">
               List of my Animes
             </Link>
