@@ -1,0 +1,30 @@
+.listAnime {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.listAnime__anime {
+  border: #fff 1px solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.listAnime__anime h3 {
+  text-align: center;
+}
+
+.buttonsAnime {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.buttonsAnime button {
+  width: 30%;
+  height: 40px;
+  margin: 1rem;
+  font-size: 1.8rem;
+}

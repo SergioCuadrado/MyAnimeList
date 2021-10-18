@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import useGetAnime from '../hooks/useGetAnime';
 
+import '../assets/styles/containers/Anime.css';
+
 const Anime = () => {
   const [pages, setPages] = useState(0);
 
@@ -20,16 +22,22 @@ const Anime = () => {
   return (
     <div>
       <p>List of animes</p>
-      <section className="ListAnime">
+      <section className="listAnime">
         {animesmanga.map((anime) => (
-          <div key={anime.id}>
+          <div className="listAnime__anime" key={anime.id}>
             <h3>{anime.attributes.slug}</h3>
-            <img src={anime.attributes.posterImage.tiny} alt={anime.attributes.slug} />
+            <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
           </div>
         ))}
-        <button onClick={decrementPages}>Back</button>
-        <button onClick={incrementPages}>Next</button>
       </section>
+      <div className="buttonsAnime">
+        <button className="buttonsAnime__button-decrement" onClick={decrementPages}>
+          Back
+        </button>
+        <button className="buttonsAnime__button-increment" onClick={incrementPages}>
+          Next
+        </button>
+      </div>
     </div>
   );
 };

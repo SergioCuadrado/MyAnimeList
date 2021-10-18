@@ -1,6 +1,12 @@
 :root {
   --background-black: #1a202c;
-  --color-text: #fff;
+  --background-button: #323e55;
+  --color-text-white: #fff;
+  --color-text-black: #000;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -8,9 +14,19 @@ body {
   padding: 0;
   font-family: 'Oswald', sans-serif;
   background-color: var(--background-black);
+  font-size: 1.6rem;
 }
 
 * {
   box-sizing: border-box;
-  color: var(--color-text);
+  color: var(--color-text-white);
+}
+
+button {
+  background-color: var(--background-button);
+  color: var(--color-text-white);
+}
+
+input {
+  color: var(--color-text-black);
 }

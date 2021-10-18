@@ -12,12 +12,17 @@ const Header = () => {
       <div className="header__menu">
         <ul className="">
           <li>
-            <Link to="/anime" className="header__list">
-              List of my Animes
+            <Link to="/signup" className="header__list">
+              Sign Up
             </Link>
           </li>
           <li>
             <Link to="/api/anime" className="header__list">
+              List of my Animes
+            </Link>
+          </li>
+          <li>
+            <Link to="/anime" className="header__list">
               List of Animes
             </Link>
           </li>
