@@ -12,6 +12,11 @@ const Header = () => {
       <div className="header__menu">
         <ul className="">
           <li>
+            <Link to="/signin" className="header__list">
+              Sign In
+            </Link>
+          </li>
+          <li>
             <Link to="/signup" className="header__list">
               Sign Up
             </Link>

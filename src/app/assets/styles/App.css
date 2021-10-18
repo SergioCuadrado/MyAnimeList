@@ -1,8 +1,11 @@
 :root {
   --background-black: #1a202c;
-  --background-button: #323e55;
+  /* --background-button: #323e55; */
+  --background-button: #63a0ce;
+  /* --background-button: #000080; */
   --color-text-white: #fff;
   --color-text-black: #000;
+  --border-grey: #dbdbdb;
 }
 
 html {

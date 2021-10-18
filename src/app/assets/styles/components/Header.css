@@ -13,13 +13,13 @@
 }
 
 .header__menu ul {
-  width: 300px;
+  width: 400px;
   list-style: none;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 50px;
+  margin-right: 32px;
 }
 
 .header__menu .header__list {
