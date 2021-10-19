@@ -10,10 +10,15 @@
   border: #fff 1px solid;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .listAnime__anime h3 {
   text-align: center;
+}
+
+.listAnime__anime img {
+  width: 100%;
 }
 
 .buttonsAnime {

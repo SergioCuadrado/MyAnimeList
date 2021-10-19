@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = {
   entry: './src/app/index.js',
   output: {
@@ -21,5 +23,21 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    fallback: {
+      path: require.resolve('path-browserify'),
+      util: false,
+      stream: false,
+      buffer: false,
+      crypto: false,
+      http: false,
+      timers: false,
+      zlib: false,
+      fs: false,
+      net: false,
+      tls: false,
+    },
+  },
+  stats: {
+    errorDetails: true,
   },
 };

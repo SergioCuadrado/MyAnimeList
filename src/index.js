@@ -9,12 +9,12 @@ const MySQLStore = require('express-mysql-session');
 const passport = require('passport');
 
 const { database } = require('./keys');
-
 // Initializations
 const app = express();
 require('./app/lib/passport');
 
 app.set('port', process.env.PORT || 4000);
+const user = 'Hello';
 /* app.set('view engine', 'jsx'); */
 // Settings
 
@@ -43,11 +43,13 @@ app.use((req, res, next) => {
   app.locals.message = req.flash('message');
   // Almacenando la informacion del usuario en la session para poder utilizar esta variable para cualquier vista
   app.locals.user = req.user;
+  //app.set('user', req.user);
+  //console.log('USER: ', app.locals.user);
   next();
 });
 
 // Routes
-app.use('/api/anime', require('./routes/anime.routes'));
+app.use('/', require('./routes/anime.routes'));
 app.use(require('./routes/authentication'));
 
 // Static files

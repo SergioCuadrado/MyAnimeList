@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import useGetAnime from '../hooks/useGetAnime';
 
 import '../assets/styles/containers/Anime.css';
@@ -25,8 +26,15 @@ const Anime = () => {
       <section className="listAnime">
         {animesmanga.map((anime) => (
           <div className="listAnime__anime" key={anime.id}>
-            <h3>{anime.attributes.slug}</h3>
-            <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
+            <h3>{anime.attributes.canonicalTitle}</h3>
+            <Link
+              to={{
+                pathname: `anime/${anime.id}`,
+                state: { anime },
+              }}
+            >
+              <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
+            </Link>
           </div>
         ))}
       </section>

@@ -15,10 +15,10 @@ const App = () => (
     <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/anime" component={Anime} />
-        <Route path="/anime/:id" component={DescriptionAnime} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/signin" component={SignIn} />
+        <Route exact path="/anime" component={Anime} />
+        <Route exact path="/anime/:id" component={DescriptionAnime} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/signin" component={SignIn} />
         <Route path="/404" component={NotFound} />
         <Redirect from="*" to="/404" />
       </Switch>

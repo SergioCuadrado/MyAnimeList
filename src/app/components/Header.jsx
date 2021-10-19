@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../assets/styles/components/Header.css';
 
+const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
 const Header = () => {
   return (
     <header className="header">
@@ -22,9 +23,10 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/logout" className="header__list">
+            <a href="/logout">Logout</a>
+            {/* <Link to="/logout" className="header__list">
               Logout
-            </Link>
+            </Link> */}
           </li>
           <li>
             <Link to="/api/anime" className="header__list">

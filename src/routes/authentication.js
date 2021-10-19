@@ -3,8 +3,10 @@ const router = express.Router();
 
 const passport = require('passport');
 const { isLoggedIn, isNotLoggedIn } = require('../app/lib/auth');
+
 router.post(
   '/signup',
+  isNotLoggedIn,
   passport.authenticate('local.signup', {
     //Route to be rerouted if all goes well
     successRedirect: '/anime',
@@ -13,7 +15,7 @@ router.post(
   })
 );
 
-router.post('/signin', (req, res, next) => {
+router.post('/signin', isNotLoggedIn, (req, res, next) => {
   passport.authenticate('local.signin', {
     successRedirect: '/anime',
     failureFlash: '/signin',
@@ -26,11 +28,11 @@ router.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 */
-// Cerrar session, el logOut() viene de una funcion del passport
+// Close session, the logOut() comes from a function of the passport
 router.get('/logout', isLoggedIn, (req, res) => {
   req.logOut();
-  console.log('Session cerrada');
-  res.redirect('/signin');
+  console.log('Closed session');
+  res.redirect('/anime');
 });
 
 module.exports = router;

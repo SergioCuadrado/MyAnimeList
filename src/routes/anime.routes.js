@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('Hola mundo');
+router.get('/api', (req, res) => {
+  var user = req.app.get('user');
+  res.write(user);
 });
 
 module.exports = router;
