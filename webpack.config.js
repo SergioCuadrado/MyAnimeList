@@ -1,7 +1,7 @@
-const nodeExternals = require('webpack-node-externals');
-
+//const nodeExternals = require('webpack-node-externals');
+require('@babel/polyfill');
 module.exports = {
-  entry: './src/app/index.js',
+  entry: ['@babel/polyfill', './src/app/index.js'],
   output: {
     path: __dirname + '/src/public',
     filename: 'bundle.js',

@@ -13,9 +13,3 @@ const useGetAnime = (url) => {
 };
 
 export default useGetAnime;
-
-/* 
-{animes.map((anime) => (
-        <div>{anime.id}</div>
-      ))}
-*/

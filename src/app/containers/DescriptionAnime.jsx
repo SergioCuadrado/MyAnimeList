@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 
+import CharactersAnime from '../components/CharactersAnime';
+
 import '../assets/styles/containers/DescriptionAnime.css';
 
-const DescriptionAnime = (props) => {
+const DescriptionAnime = () => {
   // Get anime information
   const location = useLocation();
   const { anime } = location.state;
@@ -37,6 +39,7 @@ const DescriptionAnime = (props) => {
       <div className="descriptionAnime__right">
         <h3>Synopsis</h3>
         <p>{anime.attributes.synopsis}</p>
+        <CharactersAnime id={anime.id} />
       </div>
     </section>
   );
