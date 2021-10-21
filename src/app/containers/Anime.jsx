@@ -32,6 +32,7 @@ const Anime = () => {
                 pathname: `anime/${anime.id}`,
                 state: { anime },
               }}
+              className="links"
             >
               <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
             </Link>
