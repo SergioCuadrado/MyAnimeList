@@ -4,9 +4,26 @@ import useGetCharactersAnime from '../hooks/useGetCharactersAnime';
 const CharactersAnime = ({ id }) => {
   const APICharacters = `https://kitsu.io/api/edge/anime/${id}/characters`;
   const library = useGetCharactersAnime(APICharacters);
-  //const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   console.log(library);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await fetch(library[0]);
+      const newData = await response.json();
+      setCharacters(newData);
+    };
+
+    getData();
+    /* fetch(library[0])
+      .then((response) => response.json())
+      .then((data) => setCharacters(data))
+      .catch((error) => console.error(error.message)); */
+  }, [library[0]]);
+
+  console.log(characters);
+  //console.log(library);
   //var characters = [];
   //console.log('characters:', characters);
 

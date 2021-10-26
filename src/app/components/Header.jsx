@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import '../assets/styles/components/Header.css';
+import ghost from '../assets/static/iconsFideos.png';
 
 const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
 const Header = () => {
   return (
     <header className="header">
       <Link to="/" className="header__logo">
+        <img src={ghost} alt="" />
         MyAnimeList
       </Link>
       <div className="header__menu">

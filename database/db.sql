@@ -25,8 +25,10 @@ DESCRIBE users;
 CREATE TABLE user_animeManga (
     user_id INT(20) NOT NULL,
     animeManga_id INT(20) NOT NULL,
-    PRIMARY KEY(user_id, order_id)
-)
+    PRIMARY KEY(user_id, animeManga_id),
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users (id),
+    CONSTRAINT fk_animeManga FOREIGN KEY (animeManga_id) REFERENCES animeManga (id)
+);
 
 -- ANIME TABLES
 CREATE TABLE animeManga (

@@ -1,6 +1,7 @@
 .listAnime {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  justify-self: center;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 40px;
   margin-left: 30px;
   margin-right: 30px;
@@ -9,15 +10,18 @@
 .listAnime__anime {
   border: 3px solid #fff;
   box-shadow: 4px 4px #000;
+  /* min-width: 230px;
+  max-width: 250px; */
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  max-height: 450px;
 }
 
 .listAnime__anime h3 {
   text-align: center;
   min-height: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .listAnime__anime .links {
@@ -40,7 +44,7 @@
 
 .buttonsAnime button {
   display: block;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   border: none;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
   width: 30%;

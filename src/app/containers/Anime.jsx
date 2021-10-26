@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import useGetAnime from '../hooks/useGetAnime';
+import Search from '../components/Search';
 
 import '../assets/styles/containers/Anime.css';
 
 const Anime = () => {
   const [pages, setPages] = useState(0);
-
+  const [dataSearch, setDataSearch] = useState([]);
   const APIAnime = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=${pages}`;
   const animesmanga = useGetAnime(APIAnime);
 
@@ -20,24 +22,46 @@ const Anime = () => {
     if (pages > 0) setPages(pages - 20);
   };
 
+  // Get data from the child component 'Search' from the input
+  const pull_data = (data) => {
+    setDataSearch(data);
+    console.log('data', dataSearch);
+  };
+
   return (
     <div>
       <p>List of animes</p>
+      <Search func={pull_data} />
       <section className="listAnime">
-        {animesmanga.map((anime) => (
-          <div className="listAnime__anime" key={anime.id}>
-            <h3>{anime.attributes.canonicalTitle}</h3>
-            <Link
-              to={{
-                pathname: `anime/${anime.id}`,
-                state: { anime },
-              }}
-              className="links"
-            >
-              <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
-            </Link>
-          </div>
-        ))}
+        {dataSearch.length !== 0
+          ? dataSearch.map((anime) => (
+              <div className="listAnime__anime" key={anime.id}>
+                <h3>{anime.attributes.canonicalTitle}</h3>
+                <Link
+                  to={{
+                    pathname: `anime/${anime.id}`,
+                    state: { anime },
+                  }}
+                  className="links"
+                >
+                  <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
+                </Link>
+              </div>
+            ))
+          : animesmanga.map((anime) => (
+              <div className="listAnime__anime" key={anime.id}>
+                <h3>{anime.attributes.canonicalTitle}</h3>
+                <Link
+                  to={{
+                    pathname: `anime/${anime.id}`,
+                    state: { anime },
+                  }}
+                  className="links"
+                >
+                  <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
+                </Link>
+              </div>
+            ))}
       </section>
       <div className="buttonsAnime">
         <button className="buttonsAnime__button-decrement" onClick={decrementPages}>
@@ -52,3 +76,46 @@ const Anime = () => {
 };
 
 export default Anime;
+
+{
+  /* <div className="listAnime__anime" key={dataSearch.data.id}>
+            <h3>{dataSearch.data.attributes.canonicalTitle}</h3>
+          </div> */
+}
+
+/* {animesmanga.map((anime) => (
+          <div className="listAnime__anime" key={anime.id}>
+            <h3>{anime.attributes.canonicalTitle}</h3>
+            <Link
+              to={{
+                pathname: `anime/${anime.id}`,
+                state: { anime },
+              }}
+              className="links"
+            >
+              <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
+            </Link>
+          </div>
+        ))} */
+
+/* 
+  {dataSearch != '' ? (
+          <h3>Funciona!</h3>
+        ) : (
+          animesmanga.map((anime) => (
+            <div className="listAnime__anime" key={anime.id}>
+              <h3>{anime.attributes.canonicalTitle}</h3>
+              <Link
+                to={{
+                  pathname: `anime/${anime.id}`,
+                  state: { anime },
+                }}
+                className="links"
+              >
+                <img src={anime.attributes.posterImage.small} alt={anime.attributes.slug} title={anime.attributes.slug} />
+              </Link>
+            </div>
+          ))
+        )}
+  
+  */

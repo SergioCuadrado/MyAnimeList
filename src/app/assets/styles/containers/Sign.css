@@ -46,7 +46,7 @@
 
 .formSignup button {
   display: block;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   background-color: var(--background-button);
   color: var(--color-text-white);
   font-weight: bold;

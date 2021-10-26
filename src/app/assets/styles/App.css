@@ -1,5 +1,6 @@
 :root {
   --background-black: #1a202c;
+  /* --background-black: #202023; */
   /* --background-button: #323e55; */
   --background-button: #63a0ce;
   /* --background-button: #000080; */
@@ -15,6 +16,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  /* font-family: system-ui, sans-serif; */
   font-family: 'Oswald', sans-serif;
   background-color: var(--background-black);
   font-size: 1.6rem;
@@ -26,8 +28,15 @@ body {
 }
 
 button {
+  /* background-color: #81e6d9; */
   background-color: var(--background-button);
+  /* color: #1a202c; */
   color: var(--color-text-white);
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: #648bce;
 }
 
 input {
