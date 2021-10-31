@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Home from '../containers/Home';
 import Anime from '../containers/Anime';
 import DescriptionAnime from '../containers/DescriptionAnime';
+import AnimeList from '../containers/AnimeList';
 import NotFound from '../containers/NotFound';
 import SignUp from '../containers/SignUp';
 import SignIn from '../containers/SignIn';
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/anime" component={Anime} />
         <Route exact path="/anime/:id" component={DescriptionAnime} />
+        <Route exact path="/animelist" component={AnimeList} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
         <Route path="/404" component={NotFound} />

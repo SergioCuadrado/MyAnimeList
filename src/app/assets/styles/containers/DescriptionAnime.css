@@ -28,6 +28,10 @@
   margin-top: 5px;
 }
 
+.descriptionAnime p {
+  text-align: justify;
+}
+
 .descriptionAnime__right-ranks {
   display: flex;
   justify-content: space-around;

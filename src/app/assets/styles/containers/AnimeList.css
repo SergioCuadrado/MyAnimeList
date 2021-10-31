@@ -1,0 +1,17 @@
+.myListanime {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.myListanime__anime {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+}
+
+.myListanime__anime-left img {
+  width: 125px;
+}
+
+.myListanime p {
+  text-align: justify;
+}

@@ -5,6 +5,25 @@ const pool = require('../database');
 const passport = require('passport');
 const { isLoggedIn, isNotLoggedIn } = require('../app/lib/auth');
 
+// Know if a user is logged in and get the user.
+router.get('/getuser', (req, res) => {
+  res.send(req.user);
+});
+
+// Get all the anime list of the logged in user and send to 'AnimeList'
+router.get('/animelist', async (req, res) => {
+  const animefromUserArray = await pool.query('SELECT * FROM user_animeManga WHERE user_id = ?', [req.user.id]);
+  let biblio = [];
+  let infoofAnimes;
+
+  for (let i = 0; i < animefromUserArray.length; i++) {
+    infoofAnimes = await pool.query('SELECT * FROM animeManga WHERE id = ?', [animefromUserArray[i].animeManga_id]);
+    biblio.push(infoofAnimes);
+  }
+
+  res.json(biblio);
+});
+
 router.post(
   '/signup',
   isNotLoggedIn,
@@ -61,7 +80,7 @@ router.get('/profile', isLoggedIn, (req, res) => {
 router.get('/logout', isLoggedIn, (req, res) => {
   req.logOut();
   console.log('Closed session');
-  res.redirect('/anime');
+  res.redirect('/');
 });
 
 module.exports = router;

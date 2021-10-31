@@ -21,13 +21,21 @@
 }
 
 .header__menu ul {
-  width: 400px;
+  width: 300px;
   list-style: none;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-right: 32px;
+}
+
+.header__menu a {
+  text-decoration: none;
+}
+
+.header__menu a:hover {
+  color: #ffe500;
 }
 
 .header__logo img {
