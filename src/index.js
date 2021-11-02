@@ -49,7 +49,6 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/', require('./routes/anime.routes'));
 app.use(require('./routes/authentication'));
 
 // Static files

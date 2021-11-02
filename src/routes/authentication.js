@@ -12,16 +12,19 @@ router.get('/getuser', (req, res) => {
 
 // Get all the anime list of the logged in user and send to 'AnimeList'
 router.get('/animelist', async (req, res) => {
-  const animefromUserArray = await pool.query('SELECT * FROM user_animeManga WHERE user_id = ?', [req.user.id]);
-  let biblio = [];
-  let infoofAnimes;
+  if(req.user) {
 
-  for (let i = 0; i < animefromUserArray.length; i++) {
-    infoofAnimes = await pool.query('SELECT * FROM animeManga WHERE id = ?', [animefromUserArray[i].animeManga_id]);
-    biblio.push(infoofAnimes);
+    const animefromUserArray = await pool.query('SELECT * FROM user_animeManga WHERE user_id = ?', [req.user.id]);
+    let biblio = [];
+    let infoofAnimes;
+  
+    for (let i = 0; i < animefromUserArray.length; i++) {
+      infoofAnimes = await pool.query('SELECT * FROM animeManga WHERE id = ?', [animefromUserArray[i].animeManga_id]);
+      biblio.push(infoofAnimes);
+    }
+  
+    res.json(biblio);
   }
-
-  res.json(biblio);
 });
 
 router.post(

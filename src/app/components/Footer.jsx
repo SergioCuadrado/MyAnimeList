@@ -1,10 +1,12 @@
 import React from 'react';
 
+import '../assets/styles/components/Footer.css'
+
 const Footer = () => {
   return (
-    <>
-      <p>Esto es el Footer</p>
-    </>
+    <footer>
+      <p>Copyright © 2021 All rights reserved</p>
+    </footer>
   );
 };
 

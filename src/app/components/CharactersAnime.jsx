@@ -67,6 +67,7 @@ const CharactersAnime = ({ id }) => {
     <div>
       <h3>Characters</h3>
       <p>ID: {id}</p>
+      <p>I'm working on it, it's not working yet.</p>
       {/* {<div>{characters.length > 0 ? characters[0] : 'Hola'}</div>} */}
 
       {/* <p>{characters.attributes != undefined && characters.attributes.canonicalName}</p> */}

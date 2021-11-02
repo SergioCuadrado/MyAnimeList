@@ -29,8 +29,8 @@ const Anime = () => {
   };
 
   return (
-    <div>
-      <p>List of animes</p>
+    <div className='listofAnime'>
+      <h2>List of animes</h2>
       <Search func={pull_data} />
       <section className="listAnime">
         {dataSearch.length !== 0
