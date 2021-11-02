@@ -1,4 +1,3 @@
-//const nodeExternals = require('webpack-node-externals');
 require('@babel/polyfill');
 module.exports = {
   entry: ['@babel/polyfill', './src/app/index.js'],

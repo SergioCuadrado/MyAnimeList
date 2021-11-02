@@ -15,22 +15,11 @@ const DescriptionAnime = () => {
   console.log('Anime: ', anime);
   let numero = Number(anime.attributes.averageRating);
   let synopsis = anime.attributes.synopsis.replace('[Written by MAL Rewrite]', '');
-  /* const pull_data = (data) => {
-    /* for (let i = 0; i < data.length; i++) {
-    } 
-    fetch(data[0])
-      .then((response) => response.json())
-      .then((data) => setinformationCharacter(data))
-      .catch((error) => console.error(error.message));
-
-    console.log('INFO:', informationCharacter);
-  }; */
 
   let sendData = () => {
     let id = anime.id;
     let title = anime.attributes.canonicalTitle;
     let type = anime.attributes.showType;
-    //let synopsis = anime.attributes.synopsis;
     let url_image = anime.attributes.posterImage.small;
     let episodeCount = anime.attributes.episodeCount ? anime.attributes.episodeCount : 0;
 
@@ -105,4 +94,3 @@ const DescriptionAnime = () => {
 
 export default DescriptionAnime;
 
-// <Link to={`anime/${anime.id}`} state={{ from: 'occupation' }}>

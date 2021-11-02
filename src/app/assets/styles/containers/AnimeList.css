@@ -5,7 +5,11 @@
 
 .myListanime__anime {
   display: grid;
+  gap: 20px;
   grid-template-columns: 1fr 8fr;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
+  padding: 0 15px;
 }
 
 .myListanime__anime-left img {

@@ -23,8 +23,6 @@ const Search = (props) => {
 
   let URL = 'https://kitsu.io/api/edge/anime?filter[text]=';
 
-  //console.log(searchInput);
-
   return (
     <div className="Search">
       <input placeholder="Search Anime" type="text" onChange={(e) => searchItems(e.target.value)} />

@@ -8,9 +8,7 @@ CREATE TABLE users(
     id INT(20) NOT NULL,
     username VARCHAR(25) NOT NULL,
     password VARCHAR(60) NOT NULL,
-    fullname VARCHAR(100) NOT NULL,
-    -- animeManga_id INT(20),
-    -- CONSTRAINT fk_user FOREIGN KEY (animeManga_id) REFERENCES animeManga(id)
+    fullname VARCHAR(100) NOT NULL
 );
 
 ALTER TABLE users

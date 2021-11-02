@@ -14,8 +14,6 @@ const app = express();
 require('./app/lib/passport');
 
 app.set('port', process.env.PORT || 4000);
-const user = 'Hello';
-/* app.set('view engine', 'jsx'); */
 // Settings
 
 // Middlewares
@@ -30,7 +28,7 @@ app.use(
 
 app.use(flash());
 app.use(morgan('dev'));
-// Para aceptar desde los formularios los datos que me envian los usuarios. Solo aceptar nombres, datos en string, datos simples y NO imagenes.
+// To accept from the forms the data that the users send me. Only accept names, string data, simple data and NO images.
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(passport.initialize());
@@ -38,13 +36,11 @@ app.use(passport.session());
 
 // Global Variables
 app.use((req, res, next) => {
-  // Obteniendo el mensaje del 'success', para tenerlo en mis vistas.
+  // Getting the 'success' message, to have it in my views.
   app.locals.success = req.flash('success');
   app.locals.message = req.flash('message');
-  // Almacenando la informacion del usuario en la session para poder utilizar esta variable para cualquier vista
+  // Storing the user information in the session to be able to use this variable for any view.
   app.locals.user = req.user;
-  //app.set('user', req.user);
-  //console.log('USER: ', app.locals.user);
   next();
 });
 

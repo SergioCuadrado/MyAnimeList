@@ -21,7 +21,7 @@ pool.getConnection((err, connection) => {
   console.log('DB is Connected');
   return;
 });
-// Cada vez que hagamos una consulta podremos usar Promise o async await (ya que solo podriamos usar callbacks)
+// Each time we make a query we can use Promise or async await (since we can only use callbacks).
 // Promisify Pool Querys
 pool.query = promisify(pool.query);
 

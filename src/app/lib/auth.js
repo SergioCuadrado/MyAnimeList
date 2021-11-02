@@ -1,6 +1,6 @@
 module.exports = {
-  // isAuthenticated viene de passport, Comprueba si existe la session o no
-  // Esto es para que si no estas logeado y intentas acceder a una ruta protegida como /profile entonces te rediccionara hacia /signin
+  // 'isAuthenticated' comes from 'passport', Check if the session exists or not.
+  // This is so that if you are not logged in and try to access a protected path such as /profile then you are redirected to /signin.
   isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
       return next();

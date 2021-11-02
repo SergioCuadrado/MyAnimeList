@@ -1,6 +1,5 @@
 .error {
   background-color: var(--background-black);
-  /* //background: linear-gradient(#21c08b, #ab88ab); */
   display: flex;
   align-items: center;
   justify-content: center;
