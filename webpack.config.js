@@ -1,8 +1,11 @@
 require('@babel/polyfill');
+const path = require('path');
+
 module.exports = {
   entry: ['@babel/polyfill', './src/app/index.js'],
   output: {
-    path: __dirname + '/src/public',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   module: {
@@ -46,5 +49,5 @@ module.exports = {
   },
   stats: {
     errorDetails: true,
-  },
+  }
 };

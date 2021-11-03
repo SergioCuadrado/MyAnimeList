@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon src",
     "webpack": "webpack --mode development --watch",
-    "build": "webpack --mode development && node src"
+    "build": "webpack --mode development && node src",
+    "prod": "webpack --mode production",
+    "prueba": "node src/public/index.html"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +37,7 @@
     "babel-preset-env": "^1.7.0",
     "css-loader": "^6.3.0",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
