@@ -5,6 +5,9 @@ import '../assets/styles/components/Header.css';
 import ghost from '../assets/static/iconsFideos.png';
 
 const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
+
+import { FaBars } from 'react-icons/fa';
+
 const Header = () => {
   const [user, setUser] = useState({});
 
@@ -17,7 +20,7 @@ const Header = () => {
   }, ['/getuser']);
 
   return (
-    <header className="header">
+    <nav className="header">
       <Link to="/" className="header__logo">
         <img src={ghost} alt="" />
         MyAnimeList
@@ -53,10 +56,13 @@ const Header = () => {
             <Link to="/anime" className="header__list">
               List of Animes
             </Link>
-          </li>
+          </li>{/* 
+          <a href="javascript:void(0);" className="icon" onclick="myFunction()">
+            <FaBars />
+          </a> */}
         </ul>
       </div>
-    </header>
+    </nav>
   );
 };
 

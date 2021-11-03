@@ -42,3 +42,28 @@
   width: 35px;
   transform: rotate(-15deg);
 }
+
+
+/* 
+@media screen and (max-width: 500px) {
+  .header__menu li {
+    display: none;
+  }
+  .header__menu .icon {
+    position: absolute;
+    right: 0;
+    top: 20;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .header__menu.responsive {
+    display: none;
+  }
+  .header__menu .icon {
+    position: right;
+    display: block;
+  }
+
+} */

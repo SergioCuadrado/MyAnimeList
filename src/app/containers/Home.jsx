@@ -10,9 +10,7 @@ const Home = () => {
       className="home"
       style={{
         backgroundImage: `url(${wallpaper})`,
-        objectFit: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
       }}
     >
       <h1>Favorite Animes</h1>
